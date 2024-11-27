@@ -1,10 +1,12 @@
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import Link from 'next/link';
+import { Newsletter } from './Newsletter';
 
 export function Footer() {
   return (
     <footer className="bg-secondary py-12">
-      <div className="container mx-auto px-4">
+      {/* <Newsletter /> */}
+      <div className="container mx-auto px-4 mb-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="font-semibold mb-4">À propos</h3>
@@ -15,7 +17,7 @@ export function Footer() {
               <li><Link href="#" className="text-muted-foreground hover:text-primary">Carrières</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
@@ -24,7 +26,7 @@ export function Footer() {
               <li><Link href="#" className="text-muted-foreground hover:text-primary">Aide</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="font-semibold mb-4">Légal</h3>
             <ul className="space-y-2">
@@ -33,7 +35,7 @@ export function Footer() {
               <li><Link href="#" className="text-muted-foreground hover:text-primary">CGU</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="font-semibold mb-4">Suivez-nous</h3>
             <div className="flex space-x-4">
@@ -52,9 +54,11 @@ export function Footer() {
             </div>
           </div>
         </div>
-        
+
+        <Newsletter />
+
         <div className="border-t pt-8 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} CuisineConnect. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Culinæ. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

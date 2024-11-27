@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: 'Sophie Martin',
     role: 'Amateur Passionnée',
-    content: 'Grâce à CuisineConnect, j\'ai enfin réussi à maîtriser des techniques que je pensais inaccessibles !',
+    content: 'Grâce à Culinæ, j\'ai enfin réussi à maîtriser des techniques que je pensais inaccessibles !',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
   },
   {

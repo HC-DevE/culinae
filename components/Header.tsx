@@ -9,7 +9,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ChefHat className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">CuisineConnect</span>
+            <span className="text-xl font-bold">Culinæ</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
