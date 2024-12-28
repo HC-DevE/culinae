@@ -14,12 +14,28 @@ export function Newsletter() {
     setLoading(true);
 
     try {
-      // Simulate API call to Mailchimp
-      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      console.log({response});
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue');
+      }
+
       toast.success('Merci de votre inscription !');
       setEmail('');
     } catch (error) {
-      toast.error('Une erreur est survenue. Veuillez réessayer.');
+      console.error('Newsletter subscription error:', error);
+      toast.error(error instanceof Error ? error.message : 'Une erreur est survenue. Veuillez réessayer.');
     } finally {
       setLoading(false);
     }
