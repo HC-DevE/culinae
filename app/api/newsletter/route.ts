@@ -6,13 +6,13 @@ const mailjet = new Mailjet({
   apiSecret: process.env.MAILJET_SECRET_KEY || ''
 });
 
+const senderEmail = process.env.MAILJET_SENDER_EMAIL || '';
+
 export async function POST(req: NextRequest) {
   try {
     // Utiliser la nouvelle API de Next.js pour parser le body
     const body = await req.json();
     const { email } = body;
-    
-    console.log({emailIndludes: !email.includes('@')});
     
     if (!email || !email.includes('@')) {
       return NextResponse.json(
@@ -34,7 +34,6 @@ export async function POST(req: NextRequest) {
         // }
       });
 
-      console.log({contactData: contactData});
 
     if (contactData.response.status === 201) {
       await mailjet
@@ -43,7 +42,7 @@ export async function POST(req: NextRequest) {
           Messages: [
             {
               From: {
-                Email: "contact@culinae.fr",
+                Email: senderEmail,
                 Name: "Culinae"
               },
               To: [
